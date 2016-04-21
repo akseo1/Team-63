@@ -1,6 +1,10 @@
 List of Members For Team 63 Haozhe Wang		
 
+<<<<<<< HEAD
 Kenwa Seong
+=======
+morgan Mcgregor
+>>>>>>> origin/master
 
 Member 2 Name 
 
