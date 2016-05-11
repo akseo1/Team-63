@@ -28,14 +28,14 @@
             <div class="content-grid mdl-grid">
               <div class="mdl-cell">
                 <!--   Main page content here:   -->
-                  <!-- Textfield with Floating Label 1-->
+                  <!-- Textfield with Floating Label address-->
                      <form action="#">
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" oninput="fieldValueChanged(this.value)" id="address">
+                            <input class="mdl-textfield__input" type="text" onchange="findit(this.value)" /><br/><div id="address"></div>
                          <label class="mdl-textfield__label" for="sample3">Enter a town or address</label>
                          </div>
                     </form>
-                  <!-- Textfield with Floating Label 2-->
+                  <!-- Textfield with Floating Label nickname-->
                      <form action="#">
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="text2">
@@ -64,3 +64,4 @@
         <script src="https://maps.googleapis.com/maps/api/js?v=3&callback=initMap" async defer></script>
     </body>
 </html>
+ 
