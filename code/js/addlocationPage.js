@@ -1,25 +1,29 @@
 // Code for the Add Location page.
+var map
 function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 8,
+   map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 12,
     center: {lat: -34.397, lng: 150.644}
   });
-  var geocoder = new google.maps.Geocoder();
-
  
 }
 
-function geocodeAddress(geocoder, resultsMap) {
-  var address = document.getElementById('address').value;
-  geocoder.geocode({'address': address}, function(results, status) {
+
+function panIt(response,status){
     if (status === google.maps.GeocoderStatus.OK) {
-      resultsMap.setCenter(results[0].geometry.location);
-      var marker = new google.maps.Marker({
-        map: resultsMap,
-        position: results[0].geometry.location
-      });
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-    }
-  });
+			map.panTo(response[0].geometry.location)
+            map.setCenter(response[0].geometry.location);
+            map.setZoom(15)
+           var marker = new google.maps.Marker({
+               map: map,
+               position: response[0].geometry.location
+		     })
+           }else{
+               alert('Geocode was not successful for the following reason: ' + status)
+           }
 }
+function findit(value){
+				address=value
+				geocoder=new google.maps.Geocoder();
+				geocoder.geocode({"address":address},panIt);
+			}
